@@ -15,7 +15,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running unit tests'
-                bat 'python -m unittest test_app.py'
+                sh 'python -m unittest test_app.py'
             }
         }
     }
