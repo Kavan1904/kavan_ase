@@ -9,15 +9,13 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'No build needed for Python multiplication script'
+                echo 'No build needed for Python demo'
             }
         }
         stage('Test') {
             steps {
-                echo 'Running multiplication tests'
-                // Run the test script (assuming you have test_multiply.py with your test cases)
-                sh 'python3 -m unittest test_multiply.py'
-                // Use `bat` instead of `sh` if on Windows agent: bat 'python -m unittest test_multiply.py'
+                echo 'Running unit tests'
+                bat 'python -m unittest test_app.py'
             }
         }
     }
